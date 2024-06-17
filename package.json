@@ -2,9 +2,11 @@
   "name": "festival_musica",
   "version": "1.0.0",
   "description": "Proyecto en SASS y NPM",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --watch src/scss:build/css",
+    "css": "gulp css"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,8 @@
   },
   "homepage": "https://github.com/NicolasRojas1/Practica-festival-musica#readme",
   "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
     "sass": "^1.77.5"
   }
 }
