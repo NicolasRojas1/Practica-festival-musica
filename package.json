@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/NicolasRojas1/Practica-festival-musica/issues"
   },
-  "homepage": "https://github.com/NicolasRojas1/Practica-festival-musica#readme"
+  "homepage": "https://github.com/NicolasRojas1/Practica-festival-musica#readme",
+  "devDependencies": {
+    "sass": "^1.77.5"
+  }
 }
