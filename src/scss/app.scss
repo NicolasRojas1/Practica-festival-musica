@@ -1,3 +1,11 @@
+@use 'base/variables' as *;
+
 body {
-    background-color: blue;
+    font-family: $fuente_principal;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: $negro;
 }
+
+
+
