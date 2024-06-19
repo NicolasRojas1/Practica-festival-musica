@@ -1,0 +1,27 @@
+@use 'variables' as v;
+
+//Para telefonos
+@mixin telefono {
+    @media (min-width: v.$telefono){
+        //Va a inyectar en content las propiedades que le pasemos en el mixin
+        @content;
+    }
+}
+//Para tablet
+@mixin tablet {
+    @media (min-width: v.$tablet){
+        @content;
+    }
+}
+//Para desktop
+@mixin desktop {
+    @media (min-width: v.$desktop){
+        @content;
+    }
+}
+//Para desktopXL
+@mixin desktopXL {
+    @media (min-width: v.$desktopXL){
+        @content;
+    }
+}
