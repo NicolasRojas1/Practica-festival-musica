@@ -1,0 +1,26 @@
+@use 'base/variables' as v;
+
+.header {
+    background-color: v.$verde;
+
+    .contenido-header {
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1 {
+        color: v.$blanco;
+        margin: 0; //para que quede alineado ya que tienen margin en los globales
+    }
+}
+
+/*Cuando se tienen varios bloques anidados, se opta por ponerlo aparte y asi el selector
+queda mas corto facilitando su lectura*/
+.navegacion-principal {
+
+    a {
+        color: v.$blanco;
+    }
+}

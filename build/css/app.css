@@ -370,3 +370,23 @@ img {
 body > section {
   padding: 10rem 0;
 }
+
+.header {
+  background-color: #4CB8B3;
+}
+.header .contenido-header {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h1 {
+  color: #FFFFFF;
+  margin: 0;
+}
+
+/*Cuando se tienen varios bloques anidados, se opta por ponerlo aparte y asi el selector
+queda mas corto facilitando su lectura*/
+.navegacion-principal a {
+  color: #FFFFFF;
+}
