@@ -1,0 +1,49 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video {
+    position: relative; //siempre el padre es relativo
+    min-height: 50rem;
+    max-height: 70rem;
+    overflow: hidden; //para lo que se desborde se oculte
+    .overlay {
+        position: absolute; //para poder ubicar la sombra morada donde quiero
+        background: linear-gradient(
+            270deg, 
+            rgba( v.$morado, 60% ), 
+            rgba( darken( v.$morado, 20% ), 90% )
+        ); //rgba para habilitar transparencia, y darken para aumentar la intensidad de un color
+        // darken es de sass y permite oscurecer un color
+        inset: 0; //para que todo el color ocupe el espacio del div de .video
+        display: flex;
+        align-items: center;
+    }
+
+     video {
+        display: block; //asi ocupa todo el height;
+        width: auto; //para celulares
+        @include m.desktop {
+            width: 100%;
+        }
+     }
+}
+
+.contenido-video {
+    z-index: 1; //controla la profundidad de un elemento
+
+    h2 {
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0; //por que todos los h tienen margin
+    }
+
+    p {
+        background-color: v.$rosa;
+        display: inline-block; //es mejor que solo inline
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin: 0;
+    }
+}
