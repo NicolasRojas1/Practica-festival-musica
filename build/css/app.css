@@ -629,3 +629,15 @@ queda mas corto facilitando su lectura*/
 .pase-footer p:hover {
   background-color: #1b0b22;
 }
+
+footer {
+  background-color: #F53756;
+  margin: 0;
+  padding: 1rem 0;
+  text-align: center;
+}
+footer p {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 400;
+}
