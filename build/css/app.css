@@ -547,3 +547,85 @@ queda mas corto facilitando su lectura*/
 .bg-verde li:nth-child(odd) {
   background-color: #5ebfbb;
 }
+
+.contenedor-boletos {
+  background-color: #4CB8B3;
+}
+.contenedor-boletos h3 {
+  color: #FFFFFF;
+}
+.contenedor-boletos .boletos {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .contenedor-boletos .boletos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+/* el simbolo & toma el nombre del padre en este caso .pase y agrega la segunda
+    lo que quedaria en pase-nombre, tal y como esta en la clase hija esto permite que no 
+    agregue la clase principal en el app.css que se va generando, sino que solo se 
+    genere la que se tiene en el html*/
+.pase {
+  transition: transform 0.3s ease-in-out;
+}
+.pase:hover {
+  transform: scale(1.1);
+}
+.pase-nombre {
+  font-size: 3.6rem;
+  font-weight: 900;
+  text-align: center;
+  color: #FFFFFF;
+}
+.pase-header, .pase-footer {
+  padding: 0.5rem;
+}
+.pase-header p, .pase-footer p {
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0;
+}
+.pase-header {
+  background-color: #F53756;
+  border-radius: 1rem 1rem 0 0;
+}
+.pase-header p {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  padding: 1rem 0;
+}
+.pase-body {
+  background-color: #FFFFFF;
+}
+.pase-body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pase-body ul li {
+  padding: 2rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.pase-footer {
+  background-color: #FFFFFF;
+  padding: 3rem;
+  border-radius: 0 0 1rem 1rem;
+}
+.pase-footer p {
+  font-size: 2.8rem;
+  font-weight: 900;
+  background-color: #752F97;
+  padding: 1rem 0;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.pase-footer p:hover {
+  background-color: #1b0b22;
+}

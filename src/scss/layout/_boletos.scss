@@ -1,0 +1,94 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-boletos {
+    background-color: v.$verde;
+
+    h3 {
+        color: v.$blanco;
+    }
+
+    .boletos {
+        @include m.contenedor; //asi lo centro
+
+        @include m.tablet {
+            @include m.grid(2);
+        }
+    }
+}
+
+/* el simbolo & toma el nombre del padre en este caso .pase y agrega la segunda
+    lo que quedaria en pase-nombre, tal y como esta en la clase hija esto permite que no 
+    agregue la clase principal en el app.css que se va generando, sino que solo se 
+    genere la que se tiene en el html*/
+
+.pase {
+    //Para indicarle los tiempos y como de la transicion
+    transition: transform .3s ease-in-out;
+    &:hover {
+        transform: scale(1.1); //crece un 10%
+    }
+
+    &-nombre {
+        font-size: 3.6rem;
+        font-weight: 900;
+        text-align: center;
+        color: v.$blanco;
+    }
+
+    &-header,
+    &-footer {
+        padding: 0.5rem;
+
+        p {
+            text-align: center;
+            color: v.$blanco;
+            margin: 0;
+        }
+    }
+
+    &-header {
+        background-color: v.$rosa;
+        border-radius: 1rem 1rem 0 0;
+
+        p {
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            padding: 1rem 0;
+        }
+    }
+
+    &-body {
+        background-color: v.$blanco;
+        
+        ul {
+            @include m.resetear-lista;
+
+            li {
+                padding: 2rem;
+                border-bottom: 1px solid #e1e1e1; //las lineas de la lista
+            }
+        }
+    }
+
+    &-footer {
+        background-color: v.$blanco;
+        padding: 3rem;
+        border-radius: 0 0 1rem 1rem ;
+
+        p {
+            font-size: 2.8rem;
+            font-weight: 900;
+            background-color: v.$morado;
+            padding: 1rem 0;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition:  background-color .3s; //asi cambia de color mas suave
+
+            &:hover { //al momento de señalar el precio    
+                background-color: darken(v.$morado, 30%);
+            }
+        }
+    }
+
+}
