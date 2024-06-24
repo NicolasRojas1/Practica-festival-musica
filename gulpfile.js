@@ -6,9 +6,11 @@ const sass = gulpSass(dartSass)
 
 export function css( done ) {
     //Ubica el archivo
-    src('src/scss/app.scss')
+    /*source map ayuda a ubicar la hoja de estilos que corresponde a cada segmento de 
+    la pagina al darle inspeccionar*/
+    src('src/scss/app.scss', {sourcemaps: true}) 
         .pipe( sass().on('error', sass.logError) ) //Asi le decimos que lo compile
-        .pipe( dest('build/css')) //El destino
+        .pipe( dest('build/css', {sourcemaps: true})) //El destino
     done()
 }
 //No se le pone done por que es un watch y siempre esta a la espera de cambios
