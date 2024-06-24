@@ -1,7 +1,7 @@
 @use 'variables' as v;
 
 //Para telefonos
-@mixin telefono {
+@mixin telefono { //despues de 480px
     @media (min-width: v.$telefono) {
         //Va a inyectar en content las propiedades que le pasemos en el mixin
         @content;
