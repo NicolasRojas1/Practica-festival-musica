@@ -27,3 +27,39 @@
         object-fit: cover;
     }
 }
+
+.modal {
+    position: fixed; 
+    inset: 0; //ocupa toda la pantalla
+    background-color: rgba(v.$negro, 50%);
+    display: grid;
+    place-items: center; //centrando la imagen
+    animation: fadeIn ease-in 0.5s;
+
+    //una vez agregue esta clase va a tener la animacion que lo hara desaparecer
+    &.fade-out { 
+        animation: fadeOut ease-in 0.5s;
+    }
+
+    img {
+        max-width: 100rem;
+    }
+}
+//define una linea de tiempo, animacion en la imagen
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
