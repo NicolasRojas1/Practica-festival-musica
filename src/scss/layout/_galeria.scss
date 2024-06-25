@@ -45,6 +45,19 @@
         max-width: 100rem;
     }
 }
+
+.btn-cerrar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: v.$blanco;
+    border: none;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 //define una linea de tiempo, animacion en la imagen
 @keyframes fadeIn {
     0% {
