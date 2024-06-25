@@ -1,8 +1,25 @@
 //para escuchar hasta que este listo el HTML y el css 
 document.addEventListener('DOMContentLoaded', function() {
 
+    navegacionFija()
     crearGaleria()
+    resaltarEnlace()
 })
+
+function navegacionFija() {
+    const header = document.querySelector('.header');
+    const sobreFestival = document.querySelector('.sobre-festival');
+
+    //listener para el scroll
+    window.addEventListener('scroll', function() {
+        if (sobreFestival.getBoundingClientRect().bottom < 1) {
+            header.classList.add('fixed');
+        } else {
+            header.classList.remove('fixed');
+
+        }
+    })
+}
 
 function crearGaleria() {
     const CANTIDAD_IMAGENES = 16;
@@ -62,4 +79,34 @@ function cerrarModal() {
         //asi elimino la clase
         body.classList.remove('overflow-hidden');
     }, 500) //en medio segundo
+}
+
+function resaltarEnlace() {
+    document.addEventListener('scroll', function () {
+        //Asi tengo las secciones y los nav links
+        const sections = document.querySelectorAll('section')
+        const navLinks = document.querySelectorAll('.navegacion-principal a')
+
+        let actual = '';
+        sections.forEach(section => {
+
+            //La distancia de un elemento desde arriba
+            const sectionTop = section.offsetTop
+            //console.log(sectionTop);
+            //La altura de algun elemento
+            const sectionHeight = section.clientHeight
+            //console.log(sectionHeight);
+
+            if (window.scrollY >= ( sectionTop - sectionHeight / 3 ) ) {
+                actual = section.id;
+            }
+        })
+
+        navLinks.forEach(link => {
+            link.classList.remove('active')
+            if (link.getAttribute('href') === '#' + actual) {
+                link.classList.add('active')
+            }
+        })
+    })
 }
