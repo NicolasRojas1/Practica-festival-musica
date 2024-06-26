@@ -30,8 +30,13 @@ function crearGaleria() {
         //Asi creo el html de 16 imagenes, vacias sin atributos
         const imagen = document.createElement('IMG');
 
+        //mejorando performance
+        imagen.loading = 'lazy';
+        imagen.width = "300"
+        imagen.height = "200"
+
         //La ubicacion de la imagen 
-        imagen.src = `src/img/gallery/full/${i}.jpg`;
+        imagen.src = `src/img/gallery/thumb/${i}.jpg`;
         imagen.alt = 'Imagen Galería';
 
         //Event handler, encargado de detectar y responder a una interaccion

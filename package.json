@@ -24,9 +24,11 @@
   },
   "homepage": "https://github.com/NicolasRojas1/Practica-festival-musica#readme",
   "devDependencies": {
+    "glob": "^10.4.2",
     "gulp": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
-    "sass": "^1.77.5"
+    "sass": "^1.77.5",
+    "sharp": "^0.33.4"
   }
 }
