@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navegacionFija()
     crearGaleria()
     resaltarEnlace()
+    //scrollNav()
 })
 
 function navegacionFija() {
@@ -110,3 +111,20 @@ function resaltarEnlace() {
         })
     })
 }
+
+// function scrollNav() {
+//     const navLinks = document.querySelectorAll('.navegacion-principal a')
+
+//     navLinks.forEach( link => {
+//         link.addEventListener('click', e => {
+//             //para que al darle click a cualquier elemento de navegacion no lo lleve a esa seccion
+//             e.preventDefault()
+//             //Para que seleccione el id de cada seccion
+//             const sectionScroll = e.target.getAttribute('href')
+//             //Aqui ya tengo la seccion capturada cuando le doy click
+//             const section = document.querySelector(sectionScroll)
+//             //
+//             section.scrollIntoView({behavior: 'smooth'})
+//         })
+//     })
+// }
