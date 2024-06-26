@@ -4,9 +4,12 @@ import gulpSass from 'gulp-sass'
 
 const sass = gulpSass(dartSass)
 
+import terser from 'gulp-terser'
+
 export function js( done) {
     //se ubica el archivo de js
     src('src/js/app.js')
+        .pipe( terser())
         .pipe( dest('build/js') )
 
     done()
@@ -17,7 +20,9 @@ export function css( done ) {
     /*source map ayuda a ubicar la hoja de estilos que corresponde a cada segmento de 
     la pagina al darle inspeccionar*/
     src('src/scss/app.scss', {sourcemaps: true}) 
-        .pipe( sass().on('error', sass.logError) ) //Asi le decimos que lo compile
+        .pipe( sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError) ) //Asi le decimos que lo compile
         .pipe( dest('build/css', {sourcemaps: true})) //El destino
     done()
 }
