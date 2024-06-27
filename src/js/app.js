@@ -28,16 +28,14 @@ function crearGaleria() {
 
     for(let i = 1; i <= CANTIDAD_IMAGENES; i++) {
         //Asi creo el html de 16 imagenes, vacias sin atributos
-        const imagen = document.createElement('IMG');
+        const imagen = document.createElement('PICTURE');
 
-        //mejorando performance
-        imagen.loading = 'lazy';
-        imagen.width = "300"
-        imagen.height = "200"
-
-        //La ubicacion de la imagen 
-        imagen.src = `src/img/gallery/thumb/${i}.jpg`;
-        imagen.alt = 'Imagen Galería';
+        //Mejorando el performance con los 3 formatos
+        imagen.innerHTML = `
+            <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+            <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
+            <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
+        `;
 
         //Event handler, encargado de detectar y responder a una interaccion
         imagen.onclick = function() {
@@ -50,9 +48,12 @@ function crearGaleria() {
 
 function mostrarImagen(i) {
     //Selecciono la imagen
-    const imagen = document.createElement('IMG');
-    imagen.src = `src/img/gallery/full/${i}.jpg`;
-    imagen.alt = 'Imagen Galería';
+    const imagen = document.createElement('PICTURE');
+    imagen.innerHTML = `
+            <source srcset="build/img/gallery/full/${i}.avif" type="image/avif">
+            <source srcset="build/img/gallery/full/${i}.webp" type="image/webp">
+            <img loading="lazy" width="200" height="300" src="build/img/gallery/full/${i}.jpg" alt="imagen galeria">
+        `;
     
     //Generar Modal
     const modal = document.createElement('DIV');
