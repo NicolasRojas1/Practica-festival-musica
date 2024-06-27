@@ -33,6 +33,43 @@ En el puerto 5500
 
 ##Estructura del proyecto
 
+```
+.
+├── build
+│   ├── css
+│   │   └── app.css
+|   ├── img
+|   |   └── gallery
+|   |   |   └── full
+|   |   |   └── thumb
+│   ├── js
+│   │   └── app.js
+├── src
+│   ├── img
+|   |   └── gallery
+|   |   |   └── full
+|   |   |   └── thumb
+│   ├── js
+│   │   └── app.js
+│   ├── scss
+│   │   └── base
+|   |   |   └── _globales.scss
+|   |   |   └── _variables.scss
+|   |   └── layout
+|   |   |   └── _header.scss
+|   |   |   └── _galeria.scss
+|   |   |   └── _index.scss
+|   |   └── app.scss
+│   └── video
+├── .gitignore
+├── gulpfile.js
+├── index.html
+├── package.json
+├── package-lock.json
+└── README.md
+
+```
+
 ## Tecnologías Utilizadas
 - HTML5 - Para la estructura del contenido.
 - CSS3 - Para los estilos.
