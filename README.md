@@ -35,7 +35,7 @@ En el puerto 5500
 Este proyecto esta desplegado en Netlify. Puedes verlo aquí:
 [Festival de Música](https://festival-musica-dev-web.netlify.app)
 
-##Estructura del proyecto
+## Estructura del proyecto
 
 ```
 .
